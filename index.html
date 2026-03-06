@@ -1,269 +1,164 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title> landing page</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pushkar Raj Thakur Official</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #ffcc00;
-            --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-        }
-
-        * {
+        .wp-landing-container {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body, html {
-            width: 100%;
-            height: 100%;
-            background-color: #050505;
-            font-family: 'Poppins', sans-serif;
-            color: #fff;
-            overflow: hidden;
-            position: fixed;
-        }
-
-        /* --- BLURRY AURA ANIMATION --- */
-        .background-wrapper {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-            filter: blur(80px);
-            opacity: 0.6;
-        }
-
-        .blob {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: #b38728;
-            border-radius: 50%;
-            animation: move 20s infinite alternate;
-        }
-
-        .blob-1 { top: -10%; left: -10%; background: #aa771c; }
-        .blob-2 { bottom: -10%; right: -10%; background: #bf953f; animation-duration: 25s; }
-        .blob-3 { top: 40%; left: 30%; width: 200px; height: 200px; background: #fcf6ba; animation-duration: 15s; }
-
-        @keyframes move {
-            from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(100px, 100px) scale(1.2); }
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            width: 100%;
-            padding: 20px;
+            padding: 30px 16px;
+            background: linear-gradient(180deg, #2b2b2b, #000000);
+            color: #ffffff;
             text-align: center;
-            z-index: 10;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 8px;
         }
 
-        .logo-wrapper {
-            margin-bottom: 15px;
-        }
-
-        .logo {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            padding: 3px;
-            background: var(--gold-gradient);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            animation: float 4s ease-in-out infinite;
-            margin: 0 auto;
-        }
-
-        .logo img {
-            width: 100%; height: 100%;
+        .wp-landing-container .profile img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #000;
-            display: block;
+            border: 5px solid #2b6cff;
+            box-shadow: 0 0 25px rgba(0, 123, 255, .7);
+            margin-bottom: 18px;
         }
 
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.5rem, 7vw, 2.5rem);
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-        }
-
-        .team-tag {
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            color: #fff;
+        .wp-landing-container h1 {
+            font-size: 26px;
+            color: #58a6ff;
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 14px;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        .wp-landing-container .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 40px;
             font-weight: 600;
-            opacity: 0.8;
+            margin: 12px 0;
+            font-size: 16px;
+            text-decoration: none !important;
+            transition: transform 0.2s ease;
         }
 
-        .glass-panel {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 24px;
-            width: 100%;
-            max-width: 400px;
-            margin-bottom: 35px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        .wp-landing-container .btn:hover {
+            transform: scale(1.05);
+            text-decoration: none !important;
         }
 
-        .glass-panel p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #efefef;
+        .wp-landing-container .btn-blue {
+            background: #1e90ff;
+            color: #ffffff !important;
+            box-shadow: 0 0 20px rgba(30, 144, 255, .6);
         }
 
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 15px;
+        .wp-landing-container .btn-outline {
+            border: 3px solid #2dff6f;
+            color: #ffffff !important;
+            background: transparent;
         }
 
-        .stat-item b { color: var(--gold); font-size: 1.2rem; }
-        .stat-item p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.6; }
+        .wp-landing-container .highlight {
+            color: #ffd700;
+            font-weight: 600;
+            margin: 14px 0;
+            text-decoration: underline;
+        }
 
-        .btn-telegram {
-            width: 100%;
-            max-width: 320px;
-            padding: 20px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #000;
-            background: var(--gold-gradient);
-            text-decoration: none;
-            border-radius: 50px;
-            text-transform: uppercase;
+        .wp-landing-container .subtext {
+            color: #ffcc00;
+            font-weight: 600;
+            margin: 12px 0;
+        }
+
+        .wp-landing-container .tags {
+            margin: 14px 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .wp-landing-container .tags span {
+            color: #ff3c00;
+            margin: 0 6px;
+            text-decoration: underline;
+        }
+
+        .wp-landing-container .footer-text {
+            margin-top: 14px;
+            font-weight: 600;
+            color: #ffa500;
+        }
+
+        .wp-landing-container .sponsored {
+            margin-top: 18px;
+            font-size: 13px;
+            opacity: .85;
+            text-decoration: none !important;
+        }
+
+        .wp-landing-container .sponsored strong {
             display: block;
-            box-shadow: 0 15px 35px rgba(179, 135, 40, 0.4);
-            animation: zoomPulse 2s infinite ease-in-out;
+            font-size: 16px;
+            color: #58a6ff;
+            margin-top: 4px;
         }
 
-        #timer-text {
-            display: block;
-            font-size: 0.8rem;
-            margin-top: 5px;
-            color: #000;
-            opacity: 0.8;
-        }
-
-        @keyframes zoomPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .footer {
+        .wp-landing-container .disclaimer {
+            font-size: 12px;
+            color: #dddddd;
             margin-top: 25px;
-            font-size: 0.7rem;
-            opacity: 0.7;
-            letter-spacing: 1px;
-            text-align: center;
+            line-height: 1.4;
         }
 
-        .agency-link {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
+        .wp-landing-container a {
+            text-decoration: none !important;
         }
     </style>
 </head>
 <body>
 
-    <div class="background-wrapper">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+<div class="wp-landing-container">
+    <div class="profile">
+        <a href="https://t.me/+ntW7SmKbnrIxN2U1">
+            <img src="https://mahakalx.sbs/wp-content/uploads/2026/02/puushaakr.jpg" alt="Profile">
+        </a>
     </div>
 
-    <div class="container">
-        <div class="logo-wrapper">
-            <div class="logo">
-                <img src="https://xplearn.site/wp-content/uploads/2026/02/ousshae.jpg" alt="Logo">
-            </div>
-        </div>
+    <h1>Pushkar Raj Thakur Official</h1>
 
-        <h1>Pushkar Raj Thakur Official
+    <a href="https://t.me/+ntW7SmKbnrIxN2U1" class="btn btn-blue">JOIN FREE LEARNING GROUP</a>
 
-</h1>
-    <div class="team-tag">Pushkar Raj Thakur Official</div>
+    <div class="highlight">INTRADAY | OPTIONS | SWING | ANALYSIS</div>
 
-<div class="glass-panel">
-    <p>Master the markets with Pushkar Raj Thakur Official. Get precision trading signals, daily market analysis, and back-to-back winning setups.</p>
-    
-    <div class="stats">
-        <div class="stat-item">
-            <b>92%+</b>
-            <p>Accuracy</p>
+    <a href="https://t.me/+ntW7SmKbnrIxN2U1" class="btn btn-outline">JOIN FREE LEARNING GROUP</a>
+
+    <div class="subtext">High Accuracy Signals | Real-Time Updates</div>
+
+    <div class="tags">
+        <span>NIFTY 50</span> | <span>BANKNIFTY</span> | <span>INTRADAY</span> | <span>OPTIONS</span> | <span>SWING TRADE</span>
+    </div>
+
+    <div class="footer-text">Learn, Analyse & Grow</div>
+
+    <a href="https://t.me/+ntW7SmKbnrIxN2U1">
+        <div class="sponsored">
+            Sponsored by
+            <strong>Nexgroww agency</strong>
         </div>
-        <div class="stat-item">
-            <b>25K+</b>
-            <p>Traders</p>
-        </div>
-        <div class="stat-item">
-            <b>PRO</b>
-            <p>Insights</p>
-        </div>
+    </a>
+
+    <div class="disclaimer">
+        <strong>Disclaimer:</strong> This content is for educational purposes only and does not constitute financial advice. Trading involves risk. Please do your own research before making investment decisions.
     </div>
 </div>
-
-        <a href="https://t.me/+ntW7SmKbnrIxN2U1" class="btn-telegram" id="redirect-btn">
-            JOIN TELEGRAM NOW
-            
-        </a>
-
-        <div class="footer">
-            <span>✦ 18+ | PLAY RESPONSIBLY ✦</span>
-            <p style="margin-top: 10px;">Ads managed by <br> 
-                <a href="https://telegram.me/+TRlJl628l-FkMWE9" class="agency-link">NEXGROWW AGENCY</a>
-            </p>
-        </div>
-    </div>
-
-    <script>
-       //let timeLeft = 3;
-        const timerElement = document.getElementById('timer-text');
-  //     const targetUrl = "https://t.me/+ntW7SmKbnrIxN2U1";
-
-    //    const countdown = setInterval(() => {
-            timeLeft--;
-       //   if (timeLeft <= 0) {
-                clearInterval(countdown);
-          //      window.location.href = targetUrl;
-            } else {
-          //  timerElement.textContent = `Redirecting in ${timeLeft}s...`;
-            }
-  //  }, 1000);
-   // </script>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -282,5 +177,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2054349391800758&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
 </body>
 </html>
